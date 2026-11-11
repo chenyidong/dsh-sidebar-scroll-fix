@@ -1,0 +1,25 @@
+{
+  "name": "dsh-sidebar-scroll-fix",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Fix non-scrollable right sidebar content: the host tab wrappers hard-code overflow:hidden with no fallback. 右侧 sidebar 内容超出不可滚动的修复。",
+  "keywords": ["dsh-plugin", "dsh", "sidebar", "scroll", "ui"],
+  "license": "MIT",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": ["index.js", "client.js", "cordis.patch.yml", "icon.svg", "README.md"],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": { "platform": "web", "immediately": true, "inject": [] },
+    "displayName": "右栏滚动修复",
+    "description": "右侧 sidebar 内容超出时可正常上下滚动。",
+    "icon": "./icon.svg"
+  },
+  "engines": {
+    "dsh": ">=0.2.0-rc.1 <0.4.0-0"
+  }
+}
